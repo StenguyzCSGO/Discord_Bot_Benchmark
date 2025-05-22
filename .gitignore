@@ -1,0 +1,58 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+/.env
+/.env.*
+.venv/
+venv/
+pip-log.txt
+
+# === Rust ===
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# === C++ ===
+*.exe
+*.obj
+*.o
+*.so
+*.dll
+*.out
+*.a
+*.lib
+*.dSYM/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+Makefile
+build/
+
+# === JavaScript / Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# optional: ignore lockfiles if not using them
+# package-lock.json
+# yarn.lock
+
+# === IDEs ===
+.vscode/
+.idea/
+
+# === Logs ===
+*.log
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Misc ===
+*.swp
+*.swo
+*.tmp
+*.class
