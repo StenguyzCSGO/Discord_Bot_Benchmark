@@ -4,13 +4,13 @@ __pycache__/
 *.pyo
 *.pyd
 /.env
-/.env.*
+/.env.
 .venv/
 venv/
 pip-log.txt
 
 # === Rust ===
-/target/
+target
 **/*.rs.bk
 Cargo.lock
 
