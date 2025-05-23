@@ -10,7 +10,7 @@ venv/
 pip-log.txt
 
 # === Rust ===
-/target/
+target
 **/*.rs.bk
 Cargo.lock
 
