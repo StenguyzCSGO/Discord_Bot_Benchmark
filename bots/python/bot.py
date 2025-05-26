@@ -8,7 +8,6 @@ import math
 
 load_dotenv(dotenv_path="../../.env")
 TOKEN = os.getenv("DISCORD_PYTHON_TOKEN")
-print(TOKEN)
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -61,13 +60,6 @@ async def on_message(message):
             print(f"Erreur d'envoi: {e}")
 
     await bot.process_commands(message)
-
-
-@bot.command()
-async def ping(ctx):
-    """Simple ping command"""
-    latency = round(bot.latency * 1000)
-    await ctx.send(f"Pong! Latence: {latency}ms")
 
 
 if __name__ == "__main__":
