@@ -25,6 +25,9 @@ if exist "%cd%\bots\cpp\x64\Release\MyBot.exe" (
     echo ATTENTION: MyBot.exe non trouvé
 )
 
+echo Demarrage du bot Javascript
+start "Bot Javascript" cmd.exe /k "cd /d %cd%\bots\js && node bot.js"
+
 echo.
 echo Appuyez sur une touche pour fermer cette fenetre
 pause >nul

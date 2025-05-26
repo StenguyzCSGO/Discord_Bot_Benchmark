@@ -8,7 +8,6 @@
 #include <unordered_map>
 #include <iostream>
 
-// Simple .env file reader
 std::string loadEnvVariable(const std::string& filepath, const std::string& key) {
     std::ifstream file(filepath);
     if (!file.is_open()) {

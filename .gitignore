@@ -31,6 +31,9 @@ CMakeCache.txt
 Makefile
 build/
 
+# Exclude C++ dependencies folder
+bots/cpp/MyBot/dependencies/
+
 # === JavaScript / Node.js ===
 node_modules/
 npm-debug.log*
