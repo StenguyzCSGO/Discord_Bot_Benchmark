@@ -98,9 +98,43 @@ Compile with Visual Studio then run `MyBot.exe`
 
 In Discord, type `?benchmark` to launch the performance test.
 
-## Example
+## Benchmark Results Example
 
-![Benchmark Results](https://cdn.discordapp.com/attachments/1240372726791929941/1376673993633042442/image.png?ex=68362f11&is=6834dd91&hm=67428cf55c57ed20b6ec32642a10ff9c3736c74a8dd27f7e4d8cea3848da0e61&)
+Below is an example of benchmark results obtained by running the `?benchmark` command on all bots.
+
+**Test:** 1,000,000 iterations with intensive mathematical operations
+**Result value:** `942665957.814265` (identical across all implementations)
+
+| Language       | Execution Time |
+| -------------- | -------------: |
+| **Rust**       |   **12.69 ms** |
+| **C++**        |   **12.84 ms** |
+| **JavaScript** |       78.96 ms |
+| **Python**     |      282.78 ms |
+
+**Test environment:**
+
+* Intel i5-10600K @ 5.0 GHz
+* RAM 3900 MHz CL16
+* Windows 10 (optimized)
+
+## Observations & Hypotheses
+
+* As expected, **native compiled languages (Rust, C++)** are significantly faster than interpreted languages.
+* **JavaScript** benefits from a **Just-In-Time (JIT) compiler**, explaining why it performs much better than Python despite remaining slower than native code.
+* **Python** runs in pure interpreted mode here. Using a JIT-based runtime (e.g. PyPy) or native extensions could improve performance, but this benchmark intentionally focuses on *native vs interpreted* execution.
+* **Rust consistently performs slightly faster than C++** in repeated runs.
+  A possible explanation could be:
+
+  * More aggressive or predictable compiler optimizations (LLVM)
+  * Safer abstractions enabling better optimization
+  * Differences in standard math library implementations or compilation flags
+* Discord libraries themselves have **negligible impact** on the results.
+  All bots perform the same computation locally, and the Discord API is only used to trigger and display the benchmark, not during the measured workload.
+
+## Conclusion
+
+This benchmark was implemented quickly to compare languages and libraries, but it clearly shows that **the programming language itself dominates performance**, far more than the Discord framework or API used.
 
 ## Future Improvements
 
